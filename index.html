@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>AssetHub - 静态资源效能工作台</title>
+    <script>
+      // 代理网关与深层路径自适应：
+      // 当在 /api/cos/proxy/e/qwGByRMT9u 等无末尾斜杠且无扩展名的子路径下被 iframe 嵌入时，
+      // 动态注入带末尾斜杠的 base 标签，防止相对路径 ./assets、./app-config.js 遗失父级路由
+      (function() {
+        var pathname = window.location.pathname;
+        if (!pathname.endsWith('/') && !/\.[a-zA-Z0-9]+$/.test(pathname)) {
+          var baseEl = document.createElement('base');
+          baseEl.href = window.location.origin + pathname + '/' + window.location.search + window.location.hash;
+          document.head.insertBefore(baseEl, document.head.firstChild);
+        }
+      })();
+    </script>
+    <!-- 运行时外部交付配置 (先行同步加载，免二次编译即可动态修改配置) -->
+    <script src="./app-config.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

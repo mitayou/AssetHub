@@ -1,0 +1,101 @@
+/**
+ * ==========================================================================
+ * AssetHub 设计系统令牌 (Design Tokens)
+ * 此处使用百果园 (Pagoda) 品牌生机绿美学与 Apple 高透光液态毛玻璃规范
+ * ==========================================================================
+ */
+
+:root {
+  /* 基底与通透毛玻璃 */
+  --bg-base: #f8fafc;
+  --glass-nav: rgba(255, 255, 255, 0.42); /* 超低不透明度，通透水润 */
+  --glass-surface: rgba(255, 255, 255, 0.68);
+  --glass-surface-hover: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.92);
+  --glass-border-subtle: rgba(226, 232, 240, 0.8);
+  --glass-blur: blur(28px) saturate(210%) contrast(102%);
+
+  /* 品牌核心色彩 (Pagoda Brand Green) */
+  --brand-primary: #00A34F;      /* 品牌核心主色：生机自然 */
+  --brand-hover: #008C3C;        /* 移入悬停色：温润沉稳加深 */
+  --brand-active: #007632;       /* 点击激活色：物理深陷 */
+  --brand-light: #E0F9E9;        /* 品牌浅底乳玻色 */
+  --brand-light-hover: #cbf6dc;  /* 浅底微高亮 */
+
+  /* 文本阶梯色 (规范：普通文本 #000, #222; 强调色 #00A34F) */
+  --text-title: #000000;
+  --text-main: #222222;
+  --text-regular: #333333;
+  --text-muted: #666666;
+  --text-light: #999999;
+  --text-accent: #00A34F;
+
+  /* 主操作按钮：#00A34F 纯平无渐变，前景色纯白 #ffffff */
+  --btn-primary-bg: #00A34F;
+  --btn-primary-hover: #008C3C;
+  --btn-primary-active: #007632;
+  --btn-primary-text: #ffffff;
+  --btn-primary-shadow: 0 4px 14px -2px rgba(0, 163, 79, 0.32);
+  --btn-primary-hover-shadow: 0 6px 20px -2px rgba(0, 163, 79, 0.42);
+  --btn-primary-inner-light: inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+
+  /* 次级操作按钮：白晶微玻 + 品牌浅绿 #E0F9E9 悬停态 */
+  --btn-secondary-bg: #ffffff;
+  --btn-secondary-hover: #E0F9E9;
+  --btn-secondary-text: #008C3C;
+  --btn-secondary-border: 1px solid rgba(0, 163, 79, 0.25);
+  --btn-secondary-border-hover: #00A34F;
+  --btn-secondary-shadow: 0 1px 3px rgba(0, 163, 79, 0.06);
+
+  /* 状态指示色 (规范：--state-green: #008C3C, 背景 #E0F9E9) */
+  --state-green: #008C3C;
+  --state-green-bg: #E0F9E9;
+  --state-green-border: rgba(0, 140, 60, 0.25);
+
+  --state-amber: #d97706;
+  --state-amber-bg: #FEF3C7;
+  --state-amber-border: rgba(217, 119, 6, 0.25);
+
+  --state-rose: #e11d48;
+  --state-rose-bg: #FFE4E6;
+  --state-rose-border: rgba(225, 29, 72, 0.25);
+
+  /* 现代跨平台系统原生字体栈 (免外网请求，0ms 延迟，首屏秒开) */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-code: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --radius-xl: 8px;
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+
+  /* 物理缓动曲线 */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* 淡雅微距棋盘格 */
+.checker-board {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(45deg, #f1f5f9 25%, transparent 25%), 
+    linear-gradient(-45deg, #f1f5f9 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #f1f5f9 75%), 
+    linear-gradient(-45deg, transparent 75%, #f1f5f9 75%);
+  background-size: 14px 14px;
+  background-position: 0 0, 0 7px, 7px -7px, -7px 0px;
+}

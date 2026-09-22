@@ -1,0 +1,34 @@
+{
+  "name": "assethub-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "企业级前端静态资源效能工作台 (AssetHub)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "cos-js-sdk-v5": "^1.10.1",
+    "jszip": "^3.10.2",
+    "pako": "^3.0.2",
+    "spark-md5": "^3.0.2",
+    "upng-js": "^2.1.0",
+    "vue": "^3.5.43"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@types/pako": "^3.0.0",
+    "@types/spark-md5": "^3.0.5",
+    "@vitejs/plugin-vue": "^6.0.9",
+    "typescript": "^5.8.3",
+    "vite": "^8.3.0",
+    "vue-tsc": "^3.3.11"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "cos-js-sdk-v5"
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+.env
+node_modules/
+dist/
+public/app-config.js
